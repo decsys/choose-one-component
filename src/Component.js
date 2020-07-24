@@ -1,28 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as props from "./Component.props";
+import FlexBox from "./components/FlexBox";
+import DropDownList from "./components/DropDownList";
+import RadioList from "./components/RadioList"
+import { filterOptions } from "./utils/option-params";
 
-// Build a Response Component as a React Functional Component
-const Component = ({ label, text, logResults, setNextEnabled }) => {
-  const [value, setValue] = useState(text);
-  useEffect(() => {
-    setValue(text);
+// Main Component
+const Component = ({
+  logResults, 
+  setNextEnabled,
+  dropDown,
+  width,
+  alignment,
+  textColor,
+  fontSize,
+  fontFamily,
+  ...props
+}) => {
+
+  const options = filterOptions(props);
+
+  const styles = {
+    width,
+    textColor,
+    fontSize,
+    fontFamily,
+  }
+
+  const logOption = option => {
     setNextEnabled(true);
-  }, [text, setNextEnabled]);
-
-  const handleInput = ({ target }) => {
-    setValue(target.value);
-  };
-
-  const handleBlur = e => {
-    e.persist();
-    logResults({ text: e.target.value });
-  };
+    logResults(option);
+  }
 
   return (
-    <div>
-      <div>{label}</div>
-      <input value={value} onBlur={handleBlur} onChange={handleInput} />
-    </div>
+    <FlexBox alignment={alignment}>
+      {
+        dropDown  ? <DropDownList options={options} onSelection={logOption} {...styles} />
+                  : <RadioList options={options} onSelection={logOption} {...styles} />
+      }
+    </FlexBox>
   );
 };
 
