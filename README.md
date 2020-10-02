@@ -1,47 +1,8 @@
-![GitHub](https://img.shields.io/github/license/decsys/component-boilerplate.svg)
+# DECSYS Choose One Component
 
-# DECSYS Component Boilerplate
+This component allows respondents to choose one item from several options, presented either as a list of radio buttons, or a drop down Select box.
 
-This repository contains everything needed to create an Interactive Response Component for the DECSYS Survey Platform.
-
-- It implements a very basic component as an example
-- it provides build scripts and dependencies for  easily building a component ready to use with the DECSYS Survey Platform.
-
-# Getting Started
-
-1. Either:
-    - Download the latest code from `master` and use it as a starting point for your own component.
-    - Clone this repository, then set the remote `origin` to another git repository for your own component.
-1. `npm install`.
-1. Make changes to the files in `src/` to build your component.
-    - ℹ You shouldn't need to touch `index.js`
-    - ✅ Add or remove `dependencies` using `npm`
-    - ⚠ Don't modify the `devDependencies` 
-        - the build processes depend on them, and are preconfigured for outputting a module the Survey Platform can use.
-    - ⚠ Don't modify the `peerDependencies`
-        - they are correctly configured for dependencies the Survey Platform will fulfill.
-1. `npm run storybook` to test your component visually and interactively.
-1. `npm run build` to build a distributable version of your component which can be used in the Survey Platform.
-
->  ℹ [Learn how to build a component from this boilerplate](https://github.com/decsys/component-boilerplate/wiki/Making-a-DECSYS-Response-Component)
-
-> ℹ The first party DECSYS components may also be interesting points of reference.
-> 
-> 👉 Look for any repository that ends in `-component` in the DECSYS' GitHub organisation.
-
-> ℹ [Check out the Wiki](https://github.com/decsys/component-boilerplate/wiki) for more detailed information.
-
-# Component Response Statistics
-
-> ℹ [Learn how to add statistics to a component](https://github.com/decsys/component-boilerplate/wiki/Component-Statistics)
-
-The boilerplate does not include statistics by default, as they are optional. For example the built-in [`confirmation-component`](https://github.com/decsys/confirmation-component) doesn't have any.
-
-Examples of stats can be found in the other built in components:
-- [`discrete-component`](https://github.com/decsys/discrete-component)
-- [`ellipse-component`](https://github.com/decsys/ellipse-component)
-- [`freetext-component`](https://github.com/decsys/freetext-component)
-
+**This repository is for 1.x only. The code has since moved to the [main decsys monorepo](https://github.com/decsys/decsys).**
 
 # Licensing
 
